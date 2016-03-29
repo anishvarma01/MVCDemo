@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "GetDetails";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("GetDetails","Home",FormMethod.Get))
+{
+   <table>
+       <tr>
+           <td>
+               @Html.Label("Enter the  Id")
+           </td>
+           <td>
+               @Html.TextBox("ID")
+           </td>
+       </tr>
+       <tr>
+           <td>
+               @Html.Label("Name")
+
+           </td>
+           <td>
+
+               @if (ViewData["Name1"] != null)
+               {
+                   <p>@ViewData["Name1"].ToString()</p>
+
+               }
+
+           </td>
+       </tr>
+       <tr>
+           <td>
+               @Html.Label("Gender")
+           </td>
+           <td>
+               @if (ViewData["Gender1"] != null)
+               {
+                   <p>@ViewData["Gender1"].ToString()</p>
+
+               }
+
+           </td>
+       </tr>
+       <tr>
+           <td>
+               @Html.Label("Address")
+           </td>
+           <td>
+               @if (ViewData["Address"] != null)
+               {
+                   <p>@ViewData["Address"].ToString()</p>
+
+               }
+
+
+           </td>
+       </tr>
+   </table>
+
+   <input type="submit" value="Get Details"/>
+
+}
